@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
-import {BrowserRouter, Route, withRouter} from "react-router-dom";
+import { HashRouter, Route, withRouter} from "react-router-dom";
 import UsersContainer from "./components/Users/UsersContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
@@ -67,11 +67,11 @@ let AppContainer =  compose(
     connect(mapStateToProps, {initializedThunk}))(App);
 
 const MainApp = (props) => {
-  return  <BrowserRouter>
+  return  <HashRouter basename={process.env.PUBLIC_URL}>>
         <Provider store={store}>
             <AppContainer />
         </Provider>
-    </BrowserRouter>
+    </HashRouter>
 };
 
 export default MainApp;
