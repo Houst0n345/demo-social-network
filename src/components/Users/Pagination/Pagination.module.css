@@ -1,0 +1,27 @@
+.pagination{
+    display: flex;
+    width: 550px;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+.pagination__item .active {
+    color: #00fdff;
+    border: 1px solid gray;
+    border-radius: 4px;
+}
+.pagination__item {
+    display: flex;
+}
+.pagination__item li:nth-child(n){
+    padding: 4px;
+    font-size: 20px;
+    transition: 0.2s linear;
+}
+.pagination__item li:nth-child(n):hover{
+    background-color: #0a59b4;
+    cursor: pointer;
+}
+
+
+

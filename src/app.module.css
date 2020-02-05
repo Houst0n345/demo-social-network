@@ -1,0 +1,10 @@
+.content{
+    min-width: 77%;
+    min-height: 450px;
+    flex: 1 1 auto;
+    box-sizing: border-box;
+    border: 1px solid #38444d;
+    padding-left: 3%;
+}
+
+

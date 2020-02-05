@@ -1,0 +1,18 @@
+.users{
+    display: flex;
+}
+.userPhoto {
+    width: 100px;
+    height: 100px;
+}
+.button{
+    margin: 5px 5px 10px -5px;
+}
+.description{
+    display: flex;
+    flex-direction: column;
+}
+.description div:nth-child(n){
+    padding: 5px;
+}
+

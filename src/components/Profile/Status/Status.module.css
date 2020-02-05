@@ -1,0 +1,29 @@
+.statusBlock{
+    padding: 10px 0;
+
+}
+.statusBlock div:nth-child(n){
+    height: 30px;
+
+}
+.input{
+    width: 50%;
+    background-color: #15202b;
+    color: #9fa19f;
+    padding: 9px 0 2px 0;
+    border: 1px solid #9fa19f;
+
+}
+.text{
+    padding: 12px 0 25px 0;
+    display: block;
+    width: 50%;
+    background-color: #15202b;
+}
+
+.text span{
+    padding-right: 10px;
+}
+
+
+

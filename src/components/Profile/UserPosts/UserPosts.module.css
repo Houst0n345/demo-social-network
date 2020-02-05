@@ -1,0 +1,11 @@
+.post{
+
+}
+.post__text{
+    background-color: #15202b;
+    color: white;
+    border: 1px solid #263238;
+}
+.post__button{
+    margin-left: 18%;
+}
