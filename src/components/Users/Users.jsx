@@ -14,12 +14,15 @@ const Users = (props) => {
         {
             props.state.map(u => <div className={s.users} key={u.id}>
                 <div>
+                    <div>{u.name}</div>
                     <div>
                         <NavLink to={`/Profile/` + u.id}>
                             <img src={u.photos.small != null ? u.photos.small : UserImg} alt="userimg"
                                  className={s.userPhoto}/>
                         </NavLink>
+
                     </div>
+
                     <div className={s.button}>
                         {u.followed
                             ? <button className={styleFor.button} disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
@@ -32,7 +35,7 @@ const Users = (props) => {
                     </div>
                 </div>
                 <div className={s.description}>
-                    <div>{u.name}</div>
+
                     {/*<div>{'u.location.city' }</div>*/}
                     {/*<div>{'u.location.country'}</div>*/}
                     <div>{u.status}</div>

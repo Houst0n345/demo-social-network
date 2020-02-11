@@ -8,7 +8,7 @@ import ProfileData from "./ProfileData/ProfileData";
 const Profile = (props) => {
 
     return (<div>
-        <ProfileData userData = {props.userData} status={props.status} updateStatusThunk={props.updateStatusThunk}/>
+        <ProfileData {...props}/>
         <UserPostsContainer />
     </div>);
 };

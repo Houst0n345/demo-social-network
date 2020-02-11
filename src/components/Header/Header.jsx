@@ -2,22 +2,27 @@ import React from 'react';
 import s from "./Header.module.css";
 import {NavLink} from "react-router-dom";
 import styleFor from '../common/css/button.module.css';
+import Logo from "../common/Logo";
 
 const Header = (props) => {
     return (<header className={s.logo}>
-        <div className={s.row}>
-            <img alt='logo' src='https://image.flaticon.com/icons/svg/2285/2285537.svg' className={s.img}/>
+
+            <div className={s.img}>
+                <Logo/>
+            </div>
+
             <div className={s.login}>
                 {props.isAuth
                     ? <span  className={s.login__item}>{props.login}</span>:
-                    <NavLink to={'/login'} className={styleFor.button}>Login</NavLink>}
-                    <span>
+                    <div className={s.login__button}><NavLink to={'/login'}
+                                                              className={styleFor.button}>Login</NavLink></div>}
+
                  {props.isAuth
-                     ? <button onClick={props.logout}  className={styleFor.button}>Log out</button>
+                     ? <div className={s.login__item}><button onClick={props.logout}
+                                                                className={styleFor.button}>Logout</button></div>
                      : ''}
-                     </span>
+
             </div>
-        </div>
 
     </header>)
 

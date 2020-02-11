@@ -1,35 +1,35 @@
-.img {
-    width: 40px;
-    margin: 5px 0 0 20px;
-    transition: .2s linear;
-}
-
-.img:hover {
-    transform: rotate(-45deg);
-}
-
 .logo {
     width: 100%;
     box-sizing: border-box;
-    border-left: 1px solid #38444d;
-    border-right: 1px solid #38444d;
-    border-bottom: 1px solid #38444d;
+    display: flex;
+    justify-content: space-between;
+}
+
+.img {
+    width: 40px;
+    margin: 10px 0 10px 4%;
+    transition: 400s linear;
+}
+
+.img:active {
+    transform: rotate(-1000deg);
 }
 
 .login {
     display: flex;
-    flex-direction: column-reverse;
+    padding: 10px 0 15px 0;
 }
 
 .login__item {
-    margin-right: 2%;
-    margin-top: 4px;
-    font-size: 18px;
+    margin: auto 0;
+    padding-right: 20px;
+    font-size: 20px;
+
+}
+.login__button{
+    margin: auto 0;
+    height: 20px;
+    width: 70px;
 }
 
-.row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2% 2% 2%;
-}
+

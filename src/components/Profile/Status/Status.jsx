@@ -37,7 +37,7 @@ class Status extends React.Component {
             {!this.state.editMod &&
             <div>
                 <div onDoubleClick={this.activateEditMode} className={s.text}>
-                    <span>Статус:</span>
+                    <span>Status:</span>
                     <span>{this.props.status || '-----'}</span>
                  </div>
             </div>

@@ -1,39 +1,62 @@
 import s from "./ProfileData.module.css";
-import React from "react";
+import React, {useState} from "react";
 import Preloader from "../../common/Preloader";
+import ProfilePhoto from "./ProfilePhoto";
+import Description from "./Description";
+import DescriptionForm from "./DescriptionForm";
 import Status from "../Status/Status";
-import UserImg from '../../../asset/userProfile.png';
+import styleFor from '../../common/css/button.module.css';
+
+
 
 
 const ProfileData = (props) => {
+    const [editMod,setEditMod] = useState(false);
+    const onSubmit = (formData) => {
+        props.saveProfileData(formData).then(
+            ()=>setEditMod(false)
+        );
+
+    };
     if (!props.userData) {
         return <Preloader/>
     }
-
+    let myPhoto = (e) => {
+        props.saveImg(e.target.files[0])
+    };
     return (
         <div className={s.description}>
-            <div className={s.profileLogo}>
-                <div className={s.large}>
-                    <img src={props.userData.photos.large
-                        ?props.userData.photos.large
-                        :UserImg}
-                         alt='user'/>
-                    <div>
-                        <img className={s.small} alt='dog'
-                             src={props.userData.photos.small
-                             ?props.userData.photos.small
-                             :UserImg} />
+            <div>
+                <ProfilePhoto photos={props.userData.photos}/>
+
+            </div>
+            <div>
+                {(props.authUserId === props.userData.userId)
+                    ? <div className={s.input__block}>
+                        <label htmlFor="file-input" className={s.input__label}>
+                            Change Photo
+                        </label>
+                        <input className={s.input_none} id={"file-input"} type={"file"} onChange={myPhoto}/>
                     </div>
+                    : null
+                }
+            </div>
+            <div >
+                <Status {...props}/>
+                <div className={s.description__edit}>
+                    {(!props.match.params.userId)
+                        ?<button onClick={()=>setEditMod(!editMod)} className={styleFor.button}>Edit profile</button>
+                        : null
+                    }
                 </div>
+                {/*проверка  юзер===авторизованный юзер*/}
+                {editMod
+                    ?<DescriptionForm initialValues={props.userData} userData={props.userData} onSubmit={onSubmit}/>
+                    : <Description status={props.status} updateStatusThunk={props.updateStatusThunk}
+                                   userData={props.userData} authUserId={props.authUserId}/>}
             </div>
-            <div className={s.description__list}>
-                <Status status={props.status} updateStatusThunk={props.updateStatusThunk}/>
-                <div className={s.description__item}>{props.userData.fullName}</div>
-                <div>{props.userData.aboutMe}</div>
-                <div>{props.userData.lookingForAJobDescription}</div>
-                <div>{props.userData.lookingForAJob}</div>
-                {/*вставить логику if с гифкой или чем-то подобным. Блок lookingForAJob не отображается сейчас */}
-            </div>
+
+
 
         </div>
     )

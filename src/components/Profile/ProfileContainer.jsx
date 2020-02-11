@@ -1,26 +1,42 @@
 import React from 'react';
 import Profile from "./Profile";
 import {connect} from "react-redux";
-import {getStatusThunk, getProfileThunk, updateStatusThunk} from "../../Redux/profilePageReducer";
+import {
+    getStatusThunk,
+    getProfileThunk,
+    updateStatusThunk,
+    saveImg,
+    saveProfileData
+} from "../../Redux/profilePageReducer";
 import {withRouter} from "react-router-dom";
 import {compose} from "redux";
 import {getAuthorizedId, getStatus, getUserData} from "../../Redux/reselectors/reselectors";
 
 
 class ProfileContainer extends React.Component {
-    componentDidMount() {
-        let userId =  this.props.match.params.userId;
+    refreshProfile () {
+        let userId = this.props.match.params.userId;
         if (!userId) {
-          userId = this.props.authUserId
-        } if (!userId) {
-          this.props.history.push('/login')
+            userId = this.props.authUserId;
+            if (!userId) {
+                this.props.history.push('/login')
+            }
         }
         this.props.getProfileThunk(userId);
         this.props.getStatusThunk(userId);
-
     }
+    componentDidMount() {
+        this.refreshProfile ();
+    }
+    // ===сравнивает текущего пользователя с авторизованным если !== то перерисовыает страницу ===
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if(this.props.match.params.userId!==prevProps.match.params.userId){
+            this.refreshProfile ();
+        }
+    }
+
     render() {
-        return <Profile {...this.props} userData={this.props.userData} status={this.props.status} updateStatusThunk={this.props.updateStatusThunk} />
+        return <Profile {...this.props} />
     }
 }
 
@@ -32,5 +48,5 @@ let mapStateToProps = (state) => ({
 });
 
 export default compose(
-    connect(mapStateToProps, {getProfileThunk, getStatusThunk, updateStatusThunk}),
-     withRouter)(ProfileContainer)
+    connect(mapStateToProps, {getProfileThunk, getStatusThunk, updateStatusThunk, saveImg, saveProfileData}),
+    withRouter)(ProfileContainer)
