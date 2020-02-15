@@ -1,8 +1,18 @@
 .formControl.error input,
 .formControl.error textarea {
-    border: solid #ff0009 2px;
+    border: solid #770006 1px;
 }
 
 .error {
-    color: #ff5774;
+    color: #ff8e85;
+}
+
+.form{
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    background-color: #253341;
+    color: #ebe8df;
+    border-radius: 5px;
+    font-size: 15px;
 }

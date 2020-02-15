@@ -9,22 +9,17 @@ import {
     unfollowThunk,
 } from "../../Redux/usersPageReducer";
 import Preloader from "../common/Preloader";
-
-
 import {compose} from "redux";
 
 
 class UsersContainerComponent extends React.Component {
-
     componentDidMount() {
         this.props.getUsersInfo(this.props.pageNumber, this.props.pageSize);
     }
 
     onPageChanged = (pageNumber) => {
         this.props.getUsersInfo(pageNumber, this.props.pageSize)
-
     };
-
     render() {
         return <div>
             {this.props.isFetching ? <Preloader/> : null}
@@ -55,9 +50,6 @@ let mapStateToProps = (state) => {
 
 
 export default compose(
-    connect(mapStateToProps, {
-        setPageNumber, toggleIsFetching,
-        getUsersInfo, unfollowThunk,
-        followThunk
+    connect(mapStateToProps, {setPageNumber, toggleIsFetching, getUsersInfo, unfollowThunk, followThunk
     }))(UsersContainerComponent);
 

@@ -1,12 +1,38 @@
-.login{
+.login {
     margin-top: 20px;
 }
-.login__item{
+
+.login__item {
     margin: 10px;
 }
-.field{
+
+.field {
     height: 30px;
 }
-.button{
-    margin-left: 10%;
+
+.button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.container {
+    max-width: 30%;
+}
+
+.input {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.captcha {
+    display: block;
+    margin: 10px 0;
+}
+
+.captcha__block{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }

@@ -1,24 +1,26 @@
 import React from 'react';
-import MessagesReduxForm from './MessagesReduxForm';
-import Message from "./Message/Message";
-
-
+import Dialogs from "./Dialogs/Dialogs";
+import s from './Messages.module.css';
+import MessagesForUser from "./MessagesForUser/MessagesForUser";
 
 
 let Messages = (props) => {
-    let addNewMessage = (values) => {
-        props.addMessage(values.message)
-    };
-    let message = props.messages.map(m => <Message message={m.message}/>);
     return (
-        <div>
-            {message}
-            <MessagesReduxForm onSubmit={addNewMessage}/>
+        <div className={s.container}>
+            <div className={s.container__block}>
+                {/*Отображение всех диалогов*/}
+                {props.dialogs ? <Dialogs dialogs={props.dialogs}
+                                          getListOfMessagesThunk={props.getListOfMessagesThunk}/> : ''}
+            </div>
+            <div className={s.container__block}>
+                {/*Отображение сообщений*/}
+                <MessagesForUser messages={props.messages} postMessageThunk={props.postMessageThunk} dialogWith={props.dialogWith}/>
+            </div>
+
         </div>
 
     )
 };
-
 
 
 export default Messages;

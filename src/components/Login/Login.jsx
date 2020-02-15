@@ -26,28 +26,35 @@ const Login = (props) => {
 let maxLength32 = maxLengthCreator(32);
 
 const LoginForm = (props) => {
-
     return (
         <form className={s.login} onSubmit={props.handleSubmit}>
-            <span>Login:</span> {createField('Email', 'email', Input,
-            [required, maxLength32])}
-            <span>Password:</span> {createField('Password', 'password',
-            Input, [required, maxLength32],
-            {type: 'password'})}
-            {createField(null, 'rememberMe', Input, null,
-                {type: 'checkbox'}, 'Remember Me')}
+            <div className={s.container}>
+                <div className={s.input}>
+                    <span>Login:</span>
+                    {createField('Email', 'email', Input, [required, maxLength32])}
+                </div>
+                <div className={s.input}>
+                    <span>Password:</span>
+                    {createField('Password', 'password', Input, [required, maxLength32],
+                        {type: 'password'})}
+                </div>
 
-            {/*Отоброжает capture если она есть   */}
-            {props.captcha && <img src={props.captcha} alt="captcha"/>}
-            {props.captcha && createField('Anti-bot symbols',
-                'captcha', Input, [required])}
+                <div className={s.captcha__block}>
+                    {/*Отоброжает capture если она есть   */}
+                    {props.captcha && <img className={s.captcha} src={props.captcha} alt="captcha"/>}
+                    {props.captcha && createField('Anti-bot symbols',
+                        'captcha', Input, [required])}
+                </div>
 
-            {/*Отоброжает ошибку если она есть   */}
-            {props.error && <div>{props.error}</div>}
 
-            <div className={s.button}>
-                <button className={styleFor.button}>Sing in</button>
+                {/*Отоброжает ошибку если она есть   */}
+                {props.error && <div>{props.error}</div>}
+
+                <div className={s.button}>
+                    <button className={styleFor.button}>Sing in</button>
+                </div>
             </div>
+
         </form>
     )
 };

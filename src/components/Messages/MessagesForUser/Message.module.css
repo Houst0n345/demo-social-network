@@ -1,0 +1,38 @@
+.message{
+    padding: 5px;
+
+}
+.message__block{
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.message__sender{
+    font-size: 20px;
+    padding: 5px;
+}
+
+.message__time{
+    align-items: center;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.message__text{
+    border-radius: 20px;
+    border-bottom: 1px solid #7a858c;
+    font-size: 16px;
+    padding: 5px;
+}
+
+
+.container{
+    width: 85%;
+    height: 400px;
+    border: 1px solid #38444d;
+    border-radius: 5px;
+    margin: 2% 10px 0 40px;
+    overflow: auto;
+}
+

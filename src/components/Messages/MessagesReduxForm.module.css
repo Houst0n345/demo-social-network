@@ -1,0 +1,21 @@
+.form {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+}
+
+.textArea {
+    width: 80%;
+    height: 80px;
+    resize: vertical;
+    background-color: #253341;
+    color: #ebe8df;
+}
+.button{
+    margin-left: 70%;
+    padding-top: 10px;
+
+}
+
+
+
+

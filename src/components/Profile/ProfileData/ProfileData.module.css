@@ -16,8 +16,8 @@
     border: 1px solid #1d1f14;
 }
 .large__photo{
-
 }
+
 .small {
     display: block;
     width: 120px;
@@ -37,7 +37,9 @@
     padding: 10px 0;
 }
 .description__edit{
-    margin: 10px 0;
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
 .input__block{
@@ -64,5 +66,28 @@
 }
 
 .button button{
-    margin: 0 70%;
+    margin: 0 63%;
 }
+
+.description__list_item{
+    font-size: 17px;
+    margin: 5px 0;
+
+
+}
+.contacts{
+    font-size: 17px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.user__info{
+    width: 80%;
+}
+.user__info textarea{
+    resize: vertical;
+}
+
+.form__width{
+    width: 70%;
+}
+

@@ -78,5 +78,23 @@ export const profileAPI = {
     },
 };
 
+export const messagesAPI = {
+    //Получаю все свои диологи с юзерами
+    getDialogs() {
+        return instance.get(`dialogs`)
+    },
+    //начало общения, добавить userId 1-ым в списке диалогов
+    putNewDialog(userId){
+        return instance.put(`dialogs/${userId}`)
+    },
+    //получить список сообщений с userId
+    getListOfMessages(userId){
+        return instance.get(`dialogs/${userId}/messages`)
+    },
+    // отправить сообщение userId(number) body(str)
+    postMessage(userId, message){
+        return instance.post(`dialogs/${userId}/messages`,  {body: message})
+    },
+};
 
 

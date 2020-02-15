@@ -7,15 +7,14 @@ import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import style from './app.module.css';
-//import MessagesContainer from "./components/Messages/MessagesContainer";
 import {initializedThunk} from "./Redux/appReducer";
 import {connect, Provider} from "react-redux";
 import {compose} from "redux";
 import Preloader from "./components/common/Preloader";
-//import Friends from "./components/Friends/Friends";
 import store from "./Redux/redux-store";
+import MessagesContainer from "./components/Messages/MessagesContainer";
 
-const MessagesContainer = React.lazy(() => import("./components/Messages/MessagesContainer"));
+
 const Friends = React.lazy(() => import("./components/Friends/Friends"));
 
 class App extends React.Component {
@@ -29,7 +28,7 @@ class App extends React.Component {
         }
 
         return (
-            <div className="background-color">
+            <div>
                 <div className="app-wrapper">
                     <div className="flex-container">
                         <HeaderContainer/>
@@ -37,17 +36,14 @@ class App extends React.Component {
                         <div className={style.content}>
                             <Route path='/profile/:userId?' render={() => <ProfileContainer/>}/>
                             <Route path='/users' render={() => <UsersContainer/>}/>
+                            <Route path='/messages' render={() => <MessagesContainer />}/>
                             <Route path='/friends' render={() => {
                                 return  <React.Suspense fallback={<div>Загрузка...</div>}>
                                     <Friends/>
                                 </React.Suspense>
                             }}/>
                             <Route path='/login' render={() => <Login/>}/>
-                            <Route path='/messages' render={() => {
-                              return  <React.Suspense fallback={<div>Загрузка...</div>}>
-                                    <MessagesContainer />
-                                </React.Suspense>
-                            }}/>
+                            <Route exact path='/' render={() => <ProfileContainer/>}/>
                         </div>
                     </div>
                 </div>

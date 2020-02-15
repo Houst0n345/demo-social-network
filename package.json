@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://houst0n345.github.io/demo-social-network",
   "dependencies": {
+    "antd": "^3.26.9",
     "axios": "^0.19.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",

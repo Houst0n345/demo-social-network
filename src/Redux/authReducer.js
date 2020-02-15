@@ -19,14 +19,12 @@ const authReducer = (state = initialState, action) => {
             return {
                 ...state,
                 ...action.data
-
             }
         }
         case SET_CAPTCHA: {
             return {
                 ...state,
                 captcha: action.captcha
-
             }
         }
         default:
@@ -41,6 +39,7 @@ export const setCaptcha = (data) => ({type: SET_CAPTCHA, captcha: data["url"]});
 export const getAuthThunk = () => async (dispatch) => {
     let response = await authAPI.me();
     if (response.data.resultCode === 0) {
+
         let {id, email, login} = response.data.data;
         dispatch(setAuth(id, email, login, true));
     }

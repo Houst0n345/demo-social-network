@@ -1,16 +1,22 @@
 import React from 'react';
-
-import UserPostsContainer from "./UserPosts/UserPostsContainer";
 import ProfileData from "./ProfileData/ProfileData";
+import UserPosts from "./UserPosts/UserPosts";
+import Preloader from "../common/Preloader";
+
+
 
 
 
 const Profile = (props) => {
-
-    return (<div>
-        <ProfileData {...props}/>
-        <UserPostsContainer />
-    </div>);
+    if(!props.userData){
+        return <Preloader/>
+    } else {
+        return (<div>
+            <ProfileData {...props}/>
+            <UserPosts  setPost={props.setPost} posts={props.posts} src={props.userData.photos.small}
+                        userName={props.userData.fullName}/>
+        </div>);
+    }
 };
 
 export default Profile;

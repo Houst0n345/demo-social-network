@@ -4,12 +4,14 @@ import {NavLink} from "react-router-dom";
 import styleFor from '../common/css/button.module.css';
 import Logo from "../common/Logo";
 
+
 const Header = (props) => {
     return (<header className={s.logo}>
 
             <div className={s.img}>
                 <Logo/>
             </div>
+
 
             <div className={s.login}>
                 {props.isAuth

@@ -1,0 +1,6 @@
+.container{
+    display: flex;
+}
+.container__block{
+    width: 50%;
+}

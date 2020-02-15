@@ -4,10 +4,10 @@
     min-width: 12%;
     border-top: 1px solid #38444d;
     border-right: 1px solid #38444d;
-
+    background-color: #15202b;
 }
 .sidebar__item{
-    margin: 5px auto 5px 10%;
+    margin: 10px auto 5px 10%;
     font-size: 18px;
     color: #61dafb;
     padding: 10px;

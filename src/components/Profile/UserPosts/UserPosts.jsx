@@ -1,31 +1,37 @@
 import React from 'react';
-import Post from "./Post/Post";
+import {reduxForm} from "redux-form";
+import {createField, Textarea} from "../../common/FormComponents/FormComponents";
+import Posts from "./Posts";
 import styleFor from '../../common/css/button.module.css';
 import s from './UserPosts.module.css';
 
-
-const UserPosts = React.memo(props => {
-    let newPost = props.postData.map(p => <Post messagePost ={p.messagePost} like={p.like}/>);
-    let newPostMessage = React.createRef();
-    let onAddPost = () => {
-        props.addPost();
+const UserPosts = (props) => {
+    const onSubmit = (formData) => {
+        props.setPost(formData.post)
     };
 
-    let onChangePost =  () => {
-        let text  = newPostMessage.current.value;
-        props.onChangePost(text);
-    };
+    return <div>
+        <PostReduxForm onSubmit={onSubmit} posts={props.posts} src={props.src} userName={props.userName}/>
+    </div>
+};
+
+
+const PostForm = (props) => {
 
     return (
-        <div className={s.post}>
-        <textarea onChange = {onChangePost} ref = {newPostMessage} value={props.newPostText}
-        className={s.post__text} placeholder="Что у Вас нового?" maxLength={100} cols={40}
-        rows={3}/>
-        <div className={s.post__button}>
-            <button onClick={onAddPost} className={styleFor.button}>submit</button>
-        </div>
-        {newPost}
-    </div>);
-});
+        <form  onSubmit={props.handleSubmit}>
+            <div className={s.form}>
+                {createField('My post', 'post', Textarea, [])}
+            </div>
+
+               <button className={styleFor.button}>Sing in</button>
+            <div className={s.posts__title}>My Posts</div>
+            <Posts posts={props.posts} src={props.src} userName={props.userName}/>
+        </form>
+    )
+};
+const PostReduxForm = reduxForm({form: 'post'})(PostForm);
+
+
 
 export default UserPosts;

@@ -1,18 +1,63 @@
-.users{
+.users {
+    max-width: 1000px;
+}
+
+.usersWrap {
     display: flex;
+    flex-wrap: wrap;
+    width: 100%;
 }
-.userPhoto {
-    width: 100px;
-    height: 100px;
+
+.container {
+    border: 1px solid #474744;
+    border-radius: 5px;
+    display: flex;
+    width: 30%;
+    margin: 1%;
 }
-.button{
-    margin: 5px 5px 10px -5px;
+
+@media (max-width: 960px) {
+    .container {
+        width: 45%;
+    }
 }
-.description{
+@media (max-width: 768px) {
+    .container {
+        width: 80%;
+    }
+}
+
+.container__block {
     display: flex;
     flex-direction: column;
-}
-.description div:nth-child(n){
     padding: 5px;
+
+}
+
+.image {
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    border-radius: 100%;
+    transition: 0.2s linear;
+
+}
+
+.image:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+
+.userName {
+    font-size: 20px;
+    padding: 10px 4px;
+
+}
+
+.status {
+    font-size: 15px;
+
 }
 

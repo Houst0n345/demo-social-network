@@ -6,11 +6,13 @@ import {
     getProfileThunk,
     updateStatusThunk,
     saveImg,
-    saveProfileData
+    saveProfileData, setPost
 } from "../../Redux/profilePageReducer";
 import {withRouter} from "react-router-dom";
 import {compose} from "redux";
 import {getAuthorizedId, getStatus, getUserData} from "../../Redux/reselectors/reselectors";
+import {putNewDialogThunk} from "../../Redux/messagesPageReducer";
+import {withAuthRedirectComp} from "../../hoc/withAuthRedirectComp";
 
 
 class ProfileContainer extends React.Component {
@@ -36,7 +38,19 @@ class ProfileContainer extends React.Component {
     }
 
     render() {
-        return <Profile {...this.props} />
+        return <Profile saveProfileData={this.props.saveProfileData}
+                        saveImg={this.props.saveImg}
+                        userData={this.props.userData}
+                        authUserId={this.props.authUserId}
+                        updateStatusThunk={this.props.updateStatusThunk}
+                        getStatusThunk={this.props.getStatusThunk}
+                        getProfileThunk={this.props.getProfileThunk}
+                        status={this.props.status}
+                        match={this.props.match}
+                        setPost={this.props.setPost}
+                        posts={this.props.posts}
+                        putNewDialogThunk={this.props.putNewDialogThunk}
+        />
     }
 }
 
@@ -44,9 +58,12 @@ class ProfileContainer extends React.Component {
 let mapStateToProps = (state) => ({
     authUserId: getAuthorizedId(state),
     userData: getUserData(state),
-    status: getStatus(state)
+    status: getStatus(state),
+    posts: state.profilePage.userPosts,
 });
 
 export default compose(
-    connect(mapStateToProps, {getProfileThunk, getStatusThunk, updateStatusThunk, saveImg, saveProfileData}),
-    withRouter)(ProfileContainer)
+    connect(mapStateToProps, {getProfileThunk, getStatusThunk,
+        updateStatusThunk, saveImg, saveProfileData, setPost,
+        putNewDialogThunk}),
+        withRouter,withAuthRedirectComp)(ProfileContainer)

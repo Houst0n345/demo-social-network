@@ -21,7 +21,7 @@ let Pagination = ({totalItemsCount, currentPage, pageSize, onPageChanged,portion
 
         <ul className={s.pagination__item}>
             {pages.filter(i=> i>=leftPortionPageNumber && i<rightPortionPageNumber).map(p => {
-                return <li className={currentPage === p && s.active}
+                return <li key={p} className={currentPage === p ? s.active: ''}
                            onClick={() => { onPageChanged(p)}}> {p} </li>
             })}
         </ul>

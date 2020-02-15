@@ -1,0 +1,24 @@
+.container{
+    display: flex;
+    background-color: #152732;
+    width: 50%;
+    margin: 20px 0 10px 0;
+    border-radius: 10px;
+    border: 1px solid #4d4d4d;
+}
+.userName{
+    font-size: 20px;
+
+}
+.text{
+    font-size: 15px;
+    padding: 5px 0;
+
+}
+.title{
+    margin-bottom: 10px;
+}
+
+.content{
+    margin-left: 10px;
+}

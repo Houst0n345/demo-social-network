@@ -1,11 +1,15 @@
-.post{
-
+.form{
+    max-width: 50%;
+    margin-top: 20px;
 }
-.post__text{
-    background-color: #15202b;
-    color: white;
-    border: 1px solid #263238;
+.form textarea{
+    height: 100px;
+    resize: vertical;
 }
-.post__button{
-    margin-left: 18%;
+.posts__title{
+    width: 50%;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    font-size: 30px;
+    border-bottom: 1px solid #38444d;
 }
