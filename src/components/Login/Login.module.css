@@ -1,4 +1,5 @@
 .login {
+    display: flex;
     margin-top: 20px;
 }
 
@@ -17,7 +18,7 @@
 
 
 .container {
-    max-width: 30%;
+    min-width: 40%;
 }
 
 .input {
@@ -35,4 +36,17 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+}
+.free{
+    border: 1px solid #838188;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20px;
+    font-size: 20px;
+    padding: 10px;
+}
+.free__item{
+    padding-bottom: 15px;
 }

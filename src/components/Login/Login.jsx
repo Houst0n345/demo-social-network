@@ -30,7 +30,7 @@ const LoginForm = (props) => {
         <form className={s.login} onSubmit={props.handleSubmit}>
             <div className={s.container}>
                 <div className={s.input}>
-                    <span>Login:</span>
+                    <span>Email:</span>
                     {createField('Email', 'email', Input, [required, maxLength32])}
                 </div>
                 <div className={s.input}>
@@ -53,8 +53,12 @@ const LoginForm = (props) => {
                 <div className={s.button}>
                     <button className={styleFor.button}>Sing in</button>
                 </div>
-            </div>
 
+            </div>
+            <div className={s.free}>
+                <div className={s.free__item}>Email: free@samuraijs.com</div>
+                <div>Password: free</div>
+            </div>
         </form>
     )
 };
