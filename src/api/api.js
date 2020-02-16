@@ -101,7 +101,7 @@ export const messagesAPI = {
 export const newsAPI = {
     getNews() {
       return (
-          axios.get('http://newsapi.org/v2/top-headlines?country=ru&category=science&apiKey=37ce12014ddd49b79ca625a7b42c902f')
+          axios.get('https://newsapi.org/v2/top-headlines?country=ru&category=science&apiKey=37ce12014ddd49b79ca625a7b42c902f')
               .then(response => response.data)
 
       )
