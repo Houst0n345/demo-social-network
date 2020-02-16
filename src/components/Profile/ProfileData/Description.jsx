@@ -28,7 +28,8 @@ const Description = (props) => {
 
 const Contacts = (props) => {
     return <div className={s.description__list_item}>
-        {props.contactValue?props.contactTitle+': ' + props.contactValue:''}
+        {props.contactValue?<a className={s.link} href={props.contactValue}>{props.contactValue}</a>:''}
+
     </div>
 };
 

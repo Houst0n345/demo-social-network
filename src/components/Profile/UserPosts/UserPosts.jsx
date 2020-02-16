@@ -7,7 +7,8 @@ import s from './UserPosts.module.css';
 
 const UserPosts = (props) => {
     const onSubmit = (formData) => {
-        props.setPost(formData.post)
+        props.setPost(formData.post);
+        
     };
 
     return <div>

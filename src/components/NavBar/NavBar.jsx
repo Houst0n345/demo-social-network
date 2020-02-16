@@ -9,6 +9,7 @@ const NavBar = () => {
             <NavLink className={s.sidebar__item} to='/messages'>Messages</NavLink>
             <NavLink className={s.sidebar__item} to='/friends'>Friends</NavLink>
             <NavLink className={s.sidebar__item} to='/users'>Users</NavLink>
+            <NavLink className={s.sidebar__item} to='/news'>News</NavLink>
         </div>
     );
 };

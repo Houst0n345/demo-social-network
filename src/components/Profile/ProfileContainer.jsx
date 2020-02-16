@@ -15,6 +15,7 @@ import {putNewDialogThunk} from "../../Redux/messagesPageReducer";
 import {withAuthRedirectComp} from "../../hoc/withAuthRedirectComp";
 
 
+
 class ProfileContainer extends React.Component {
     refreshProfile () {
         let userId = this.props.match.params.userId;
@@ -50,6 +51,7 @@ class ProfileContainer extends React.Component {
                         setPost={this.props.setPost}
                         posts={this.props.posts}
                         putNewDialogThunk={this.props.putNewDialogThunk}
+
         />
     }
 }

@@ -11,12 +11,6 @@ const ProfilePhoto = (props) => {
                         ? props.photos.large
                         : UserImg}
                          alt='user' className={s.large__photo}/>
-                    <div>
-                        <img className={s.small} alt='user'
-                             src={props.photos.small
-                                 ? props.photos.small
-                                 : UserImg}/>
-                    </div>
                 </div>
             </div>)
             };

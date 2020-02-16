@@ -33,7 +33,7 @@ export const usersAPI = {
 
 export const securityAPI = {
     getCaptcha() {
-        return  instance.get(`security/get-captcha-url`);
+        return instance.get(`security/get-captcha-url`);
     },
 };
 
@@ -41,7 +41,7 @@ export const authAPI = {
     me() {
         return instance.get(`auth/me`)
     },
-    login(email, password, rememberMe = false, captcha=null) {
+    login(email, password, rememberMe = false, captcha = null) {
         return (
             instance.post(`auth/login`, {email, password, rememberMe, captcha})
         )
@@ -84,17 +84,27 @@ export const messagesAPI = {
         return instance.get(`dialogs`)
     },
     //начало общения, добавить userId 1-ым в списке диалогов
-    putNewDialog(userId){
+    putNewDialog(userId) {
         return instance.put(`dialogs/${userId}`)
     },
     //получить список сообщений с userId
-    getListOfMessages(userId){
+    getListOfMessages(userId) {
         return instance.get(`dialogs/${userId}/messages`)
     },
     // отправить сообщение userId(number) body(str)
-    postMessage(userId, message){
-        return instance.post(`dialogs/${userId}/messages`,  {body: message})
+    postMessage(userId, message) {
+        return instance.post(`dialogs/${userId}/messages`, {body: message})
     },
 };
 
+//
+export const newsAPI = {
+    getNews() {
+      return (
+          axios.get('http://newsapi.org/v2/top-headlines?country=ru&category=science&apiKey=37ce12014ddd49b79ca625a7b42c902f')
+              .then(response => response.data)
+
+      )
+    }
+};
 

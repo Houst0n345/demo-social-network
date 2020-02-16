@@ -1,0 +1,25 @@
+.block{
+    display: flex;
+    border-radius: 5px;
+    border: 1px solid #858585;
+    padding: 15px;
+    margin: 15px;
+}
+.img{
+    object-fit: cover;
+    width: 35%;
+}
+.text{
+    display: flex;
+    flex-direction: column;
+}
+.link{
+    font-size: 30px;
+    color: #d6d6d6;
+   display: block;
+    padding: 0 0 10px 10px;
+}
+.description{
+    font-size: 16px;
+    padding: 10px;
+}

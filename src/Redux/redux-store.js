@@ -7,6 +7,7 @@ import {reducer as formReducer} from 'redux-form';
 import messagesPageReducer from "./messagesPageReducer";
 import appReducer from "./appReducer";
 import {compose} from 'redux';
+import newsPageReducer from "./newsPageReducer";
 
 let reducers = combineReducers({
     profilePage: profilePageReducer,
@@ -14,7 +15,8 @@ let reducers = combineReducers({
     auth: authReducer,
     form: formReducer,
     messagesPage: messagesPageReducer,
-    app: appReducer
+    app: appReducer,
+    newsPage: newsPageReducer
 });
 
 

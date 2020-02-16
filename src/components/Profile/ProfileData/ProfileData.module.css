@@ -16,19 +16,12 @@
     border: 1px solid #1d1f14;
 }
 .large__photo{
+    border-radius: 5px;
+    border: 2px solid #1f1f1f;
+    margin-left: 6px;
 }
 
-.small {
-    display: block;
-    width: 120px;
-    height: 120px;
-    border: 2px solid #424646;
-    border-radius: 360%;
-    overflow: hidden;
-    position: absolute;
-    top: 240px;
-    left: 20px;
-}
+
 .description__list{
     width: 100%;
 }
@@ -91,3 +84,6 @@
     width: 70%;
 }
 
+.link{
+    color: #61dafb;
+}

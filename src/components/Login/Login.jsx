@@ -58,6 +58,8 @@ const LoginForm = (props) => {
             <div className={s.free}>
                 <div className={s.free__item}>Email: free@samuraijs.com</div>
                 <div>Password: free</div>
+                <br/>
+                <div>This account has a limit of 20 requests</div>
             </div>
         </form>
     )

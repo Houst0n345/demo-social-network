@@ -13,6 +13,8 @@ import {compose} from "redux";
 import Preloader from "./components/common/Preloader";
 import store from "./Redux/redux-store";
 import MessagesContainer from "./components/Messages/MessagesContainer";
+import NewsContainer from "./components/News/NewsContainer";
+
 
 
 const Friends = React.lazy(() => import("./components/Friends/Friends"));
@@ -43,6 +45,8 @@ class App extends React.Component {
                                 </React.Suspense>
                             }}/>
                             <Route path='/login' render={() => <Login/>}/>
+                            <Route path='/news' render={() => <NewsContainer/>}/>
+
                             <Route exact path='/' render={() => <ProfileContainer/>}/>
                         </div>
                     </div>
