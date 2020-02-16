@@ -1,0 +1,2 @@
+(this["webpackJsonpmy-1-react-app"]=this["webpackJsonpmy-1-react-app"]||[]).push([[3],{302:function(t,e,n){t.exports={text:"Friends_text__1MdE-"}},303:function(t,e,n){"use strict";n.r(e);var a=n(0),s=n.n(a),c=n(302),p=n.n(c);e.default=function(){return s.a.createElement("div",{className:p.a.text},"Soon")}}}]);
+//# sourceMappingURL=3.35a85d56.chunk.js.map
